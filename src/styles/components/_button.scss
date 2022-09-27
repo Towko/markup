@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.btn-default {
+    font-size: map-get($font-sizes, 'md');
+    line-height: 1.13;
+    font-weight: 700;
+    color: $white;
+    background: $main-blue;
+    padding: 20px;
+    border: none;
+    min-width: 229px;
+    text-align: center;
+    border-radius: $main-border-radius;
+    cursor: pointer;
+    @include transition(background);
+
+    &:hover {
+        background: $light-blue;
+    }
+}

@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the rounded icon component.
+// -----------------------------------------------------------------------------
+
+.rounded-icon {
+    @include size(17px);
+    font-size: 8px;
+    color: $white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $rounded-circle;
+
+    &.icon-info {
+        background: #B5B5B5;
+    }
+
+    &.icon-plus {
+        background: $green;
+    }
+
+    &.icon-minus {
+        font-size: 2px;
+        background: $red;
+    }
+}

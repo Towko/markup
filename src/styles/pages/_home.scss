@@ -1,0 +1,263 @@
+// -----------------------------------------------------------------------------
+// This file contains all unique styles for home page only
+// -----------------------------------------------------------------------------
+
+.iframe-holder {
+    position: relative;
+    padding: 56% 0 0 0;
+    margin: 100px 0;
+    border-radius: $main-border-radius;
+    overflow: hidden;
+
+    @include media('>=desktop') {
+        padding: 559px 0 0 0;
+        margin: 95px 0 0;
+        max-width: 1000px;
+        margin: 90px auto 140px;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        border-radius: $main-border-radius;
+    }
+}
+
+.no-credit {
+    margin: 20px 0 0;
+}
+
+.main-article {
+    padding: 50px 0 86px;
+
+    @include media('>=custom-desktop') {
+        padding: 60px 0 135px;
+    }
+
+    &__text-holder {
+        font-size: map-get($font-sizes, 'sm');
+        max-width: 530px;
+        margin: 0 auto;
+
+        @include media('>=custom-desktop') {
+            font-size: map-get($font-sizes, 'md');
+        }
+    }
+}
+
+.global-article {
+    padding: 60px 15px 56px;
+    margin: 0 -15px;
+
+    @include media('>=tablet') {
+        margin: 0;
+        border-radius: $main-border-radius;
+    }
+
+    @include media('>=custom-desktop') {
+        padding: 150px 15px 78px;
+        margin: 0 0 140px;
+    }
+
+    &__text {
+        @include media('>=tablet') {
+            max-width: 810px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.manage-article {
+    background: $dark-grey;
+
+    &__title-part-txt {
+        display: block;
+
+        @include media('>=tablet') {
+            display: inline;
+        }
+    }
+}
+
+.table-article {
+    background: $gray;
+
+    @include media('>=laptop') {
+        border-radius: $main-border-radius;
+    }
+
+    .global-article__text {
+        padding-bottom: 10px;
+
+        @include media('>=tablet') {
+            padding-bottom: 32px;
+        }
+    }
+
+    h3 {
+        margin-bottom: 30px;
+
+        @include media('>=tablet') {
+            margin-bottom: 24px;
+        }
+    }
+
+    .btn-holder {
+        padding: 0;
+
+        @include media('>=tablet') {
+            padding: 0 0 21px;
+        }
+    }
+}
+
+.company-list {
+    @extend %listreset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+
+    @include media('>=custom-desktop') {
+        margin: 0 -20px;
+    }
+
+    li {
+        zoom: .78;
+        padding: 0 17px 10px;
+
+        @include media('>desktop') {
+            zoom: 1;
+            padding: 0 15px;
+        }
+
+        @include media('>=custom-desktop') {
+            padding: 0 20px;
+        }
+
+        &.last-item {
+            @include media('>desktop') {
+                order: 1;
+            } 
+        }
+    }
+}
+
+.device-block {
+    &__title {
+        margin-bottom: 30px;
+
+        @include media('>=custom-desktop') {
+            margin-bottom: 67px;
+        }
+    }
+
+    &__list {
+        @extend %listreset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        
+        li {
+            padding: 0 17px;  
+        }
+
+        .icon-windows {
+            font-size: 28px;
+        }
+        .icon-android {
+            font-size: 22px;
+        }
+        .icon-apple {
+            font-size: 30px;
+        }
+    }
+}
+
+.gallery-article {
+    padding: 100px 5px;
+
+    @include media('>=desktop') {
+        padding: 0;
+        margin: 0 0 140px;
+    }
+    
+    h2 {
+        @include media('>=desktop') {
+            margin: 0 0 50px;
+        }
+    }
+}
+
+.faq-article {
+    margin: 0 0 100px;
+
+    @include media('>=desktop') {
+        margin: 0 0 140px;
+    }
+
+    h2 {
+        @include media('>=desktop') {
+            margin: 0 0 67px;
+        }
+    }
+}
+
+.circle-article {
+    position: relative;
+
+    @include media('>=custom-desktop') {
+        margin: 0 0 140px;
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        
+        @include media('>=desktop') {
+            top: 37%;
+        }
+    }
+
+    &__txt {
+        margin: 0 auto;
+
+        @include media('>=tablet') {
+            width: 750px;
+        }
+
+        @include media('>=desktop') {
+            position: absolute;
+            top: 47.4%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .btn-default {
+            min-width: 236px;
+            margin: 10px 0 0;
+
+            @include media('>=tablet') {
+                min-width: 182px;
+            }
+        }
+    }
+
+    &__img {
+        position: relative;
+        max-width: 345px;
+        margin: 0 auto 37px;
+        
+        @include media('>=desktop') {
+            max-width: 992px;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the accordion component.
+// -----------------------------------------------------------------------------
+
+.accordion {
+    padding: 20px 0 0;
+    margin: 0 -5px;
+
+    @include media('>=custom-desktop') {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        border: 4px solid $gray-next;
+        border-radius: $main-border-radius;
+        margin-bottom: 10px;
+        @include transition(border);
+
+        &:hover {
+            border-color: #DADADA;
+        }
+
+        &.active {
+            &:hover {
+                border-color: $gray-next;
+            }
+
+            .icon-arrow-down {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .opener {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-items: baseline;
+        font-size: 22px;
+        line-height: $headings-line-height;
+        font-weight: 700;
+        letter-spacing: -.5px;
+        color: $black;
+        padding: 25px 15px 30px;
+
+        @include media('>=custom-desktop') {
+            font-size: map-get($font-sizes, 'lg');
+            line-height: $line-height-lg;
+            padding: 49px 40px 49px 55px;
+            align-items: center;
+        }
+
+        .icon-arrow-down {
+            font-size: 15px;
+            flex-shrink: 0;
+            margin: 0 0 0 13px;
+            @include transition(transform);
+        }
+    }
+
+    .slide {
+        padding: 0 80px 0 20px;
+
+        @include media('>=laptop') {
+            padding: 0 80px 0 55px;
+        }
+    }
+}
+
+.footer-accordion {
+    padding: 10px 0 100px;
+
+    @include media('>=desktop') {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        border-bottom: 1px solid #CECECE;
+
+        @include media('>=desktop') {
+            border-bottom: none;
+        }
+    }
+
+    &__list {
+        @extend %listreset;
+
+        li {
+            @include media('>=desktop') {
+                margin: 0 0 14px;
+            }
+        }
+
+        a {
+            color: $black;
+            display: inline-block;
+            padding: 10px 0;
+
+            @include media('>=desktop') {
+                padding: 0;
+            }
+
+            &:hover {
+                color: $gray-hover;
+            }
+        }
+    }
+
+    .opener {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+        padding: 24px 0;
+
+        @include media('>=desktop') {
+            padding: 0;
+            margin: 0 0 32px;
+            pointer-events: none;
+        }
+
+        &__ico {
+            font-size: 4px;
+
+            @include media('>=desktop') {
+                display: none;
+            }
+        }
+    }
+
+    .slide {
+        &.js-acc-hidden {
+            @include media('>=desktop') {
+                position: static !important;
+            }
+        }
+    }
+}

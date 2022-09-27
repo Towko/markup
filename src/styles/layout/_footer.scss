@@ -1,0 +1,175 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site
+// -----------------------------------------------------------------------------
+.footer {
+    font-size: map-get($font-sizes, 'md');
+    background: $gray;
+    padding: 0 0 25px;
+
+    @include media('>=desktop') {
+        padding: 50px 0 40px;
+    }
+
+    &__bottom-block {
+        text-align: center;
+        padding: 0 15px;
+
+        @include media('>=custom-desktop') {
+            padding: 26px 20px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        margin: 0 0 60px;
+
+        @include media('>=custom-desktop') {
+            margin: 4px -4px 0 0;
+        }
+
+        &--text {
+            font-size: 20px;
+            font-weight: 700;
+            color: $black;
+            margin: 0 0 0 10px;
+
+            sup {
+                font-weight: 500;
+                font-size: 60%;
+                top: -0.5em;
+                left: -0.3em;
+            }
+        }
+    }
+
+    &__logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            display: block;
+        }
+    }
+
+    &__social-list {
+        @extend %listreset;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 46px;
+        margin: 0 0 48px;
+
+        @include media('>=tablet') {
+            justify-content: center;
+        }
+
+        @include media('>=custom-desktop') {
+            margin: -4px 123px 0 0;
+        }
+
+        li {
+            @include media('>=tablet') {
+                margin: 0 10px;
+            }
+        }
+
+        a {
+            color: $black;
+            @include transition(opacity);
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+
+    &__avards {
+        @extend %listreset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 33px;
+
+        @include media('>=custom-desktop') {
+            justify-content: flex-start;
+            margin: 5px 0 15px ;
+        }
+
+        li {
+            margin: 0 5px 0 0;
+        }
+    }
+
+    &__extra-list {
+        @extend %listreset;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 14px;
+
+        @include media('>=custom-desktop') {
+            justify-content: flex-start;
+            margin: 0 -6px 9px;
+        }
+
+        li {
+            margin: 0 6px;
+        }
+
+        a {
+            color: $black;
+
+            &:hover {
+                color: $light-blue;
+            }
+        }
+    }
+
+    &__copy {
+        display: block;
+        font-size: 12px;
+        letter-spacing: -.2px;
+        color: #787878;
+        max-width: 280px;
+        margin: 0 auto;
+
+        @include media('>=custom-desktop') {
+            max-width: none;
+        }
+
+        a {
+            color: inherit;
+
+            &:hover {
+                color: $light-blue;
+            }
+        }
+    }
+
+    &__col {
+        &:first-child {
+            @include media('>=custom-desktop') {
+                order: 3;
+            }
+        }
+
+        &:last-child {
+            @include media('>=custom-desktop') {
+                order: 1;
+            }
+        }
+
+        &:nth-child(2) {
+            @include media('>=custom-desktop') {
+               order: 2;
+            }
+        }
+    }
+
+    .link-label {
+        left: 100%;
+    }
+}

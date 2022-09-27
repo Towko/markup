@@ -1,0 +1,55 @@
+
+/*!
+  Theme Name: test1
+  Author: Anonymous
+  Author URI:
+  Version: 1
+  Description: test1 theme for Wordpress
+  License: GNU General Public License v2 or later
+  License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+  Text Domain: test1
+  Tags: one-column, two-columns
+  Theme URI:
+*/
+
+// 1. Configuration and helpers
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Vendors: include media mixins and mormalize imported from node_modules
+@import '~include-media/dist/include-media';
+@import '~normalize.css';
+@import 'vendors/icomoon/styles';
+
+// 3. Base styles and elements
+@import 'base/base';
+@import 'base/helpers';
+@import 'base/fonts';
+@import 'base/wp-reset';
+@import 'base/typography';
+@import 'base/forms';
+
+// 4. Layout-related sections
+@import 'layout/header';
+@import 'layout/common';
+@import 'layout/footer';
+
+
+// 5. Components
+@import 'components/accordion';
+@import 'components/button';
+@import 'components/labeled-link';
+@import 'components/rounded-icon';
+@import 'components/slick';
+@import 'components/table';
+@import 'components/tabs';
+@import 'components/tooltip';
+@import 'components/filters';
+
+// 6. Page-specific styles
+@import 'pages/home';
+@import 'pages/comparison';
+
+// 7. Themes
+// @import 'themes/themes';

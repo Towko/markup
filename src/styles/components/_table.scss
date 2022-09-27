@@ -1,0 +1,85 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the table component.
+// -----------------------------------------------------------------------------
+
+.table-holder {
+	background: $white;
+	max-width: 1196px;
+	padding: 29px 5px 20px;
+	margin: 0 -5px 60px;
+	border-radius: 8px;
+
+	@include media('>=tablet') {
+		padding: 50px 30px 35px;
+		margin: 0 auto 75px;
+	}
+
+	.table {
+		border-collapse: collapse;
+		font-size: map-get($font-sizes, 'sm');
+		line-height: $headings-line-height;
+		width: 100%;
+		text-align: left;
+
+		@include media('>=tablet') {
+			font-size: map-get($font-sizes, 'md');
+		}
+
+		tbody {
+			tr {
+				border-bottom: 1px solid #E8E8E8;
+			}
+		}
+
+		th {
+			padding: 0;
+
+			@include media('>=tablet') {
+				padding: 0 0 12px;
+			}
+
+			&:first-child {
+				width: 33.7%;
+
+				@include media('>=tablet') {
+					width: 36%;
+				}
+			}
+
+			&:last-child {
+				width: 33%;
+				
+				@include media('>=tablet') {
+					width: 42.3%;
+				}
+			}
+		}
+
+		td {
+			position: relative;
+			padding: 15px 3px 4px 0;
+			vertical-align: bottom;
+
+			@include media('>=desktop') {
+				padding: 20px 6px 6px 0;
+				height: 48px;
+			}
+		}
+
+		.tooltip-cell {
+			padding-right: 30px;
+		}
+
+		.rounded-icon {
+			// @include media('>=tablet') {
+			// 	transform: translateY(-3px);
+			// }
+		}
+
+		.hover-tooltip-link {
+			position: absolute;
+			right: 10px;
+			bottom: 4px;
+		}
+	}
+}

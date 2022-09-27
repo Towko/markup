@@ -1,0 +1,47 @@
+.comparison {
+    display: flex;
+    position: relative;
+	flex-direction: column;
+    flex-wrap: no-wrap;
+	padding: 30px 15px;
+	@include media('>=tablet') {
+		flex-direction: row;
+		padding: 78px 15px;
+	}
+}
+.decorated {
+    position: relative;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -5px;
+		right: -15%;
+		width: 120%;
+		height: 100%;
+		background: url("../images/stroke.svg") no-repeat;
+		background-size: contain;
+		z-index: -1;
+	}
+}
+.page-article {
+    padding-top: 70px;
+}
+.page-article h1 {
+    margin: 0 0 20px;
+}
+
+.cta-article {
+	padding: 40px 0 80px;
+	margin: 0 auto;
+	h2 {
+		margin: 0 0 20px;
+	}
+	.btn-holder {
+		span {
+			font-size: 14px;
+			line-height: 18px;
+			color: $gray-hover;
+		}
+	}
+}

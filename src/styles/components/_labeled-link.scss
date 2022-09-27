@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the link label component.
+// -----------------------------------------------------------------------------
+
+.link-with-label {
+    position: relative;
+}
+
+.link-label {
+    position: absolute;
+    top: -10px;
+    left: 84%;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 500;
+    color: $white;
+    background: #FF7878;
+    padding: 2px 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}

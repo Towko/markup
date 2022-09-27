@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the tabs component.
+// -----------------------------------------------------------------------------
+
+.tabset {
+	display: flex;
+	align-items: center;
+	font-size: map-get($font-sizes, 'sm');
+	padding: 29px 0 30px;
+	margin: 0 -15px;
+	overflow-x: auto;
+
+	@include media('>=tablet') {
+		padding: 33px 15px 40px;
+		justify-content: center;
+	}
+	
+	&__link {
+		font-weight: 700;
+		color: $black;
+		padding: 10px 21px;
+		margin: 0 15px;
+		border: 1px solid #CDD5D7;
+		border-radius: 12px;
+		white-space: nowrap;
+		@include transition(color background border);
+
+		&:hover {
+			color: $black;
+			background: #E2EAEC;
+			border-color: #E2EAEC;
+		}
+
+		&.active {
+			background: #CDD5D7;
+		}
+
+		@include media('>=tablet') {
+			padding: 10px 12px;
+			border-radius: 4px;
+		}
+	}
+}
+
+.tab-content {
+	padding: 0 0 65px;
+
+	@include media('>=custom-desktop') {
+		padding: 0 0 73px;
+	}
+
+	@include media('>=laptop') {
+		padding: 0 0 70px;
+	}
+
+	&__item {
+		max-width: 985px;
+		margin: 0 auto;
+		border-radius: $main-border-radius;
+		overflow: hidden;
+	}
+}
+
+.js-tab-hidden {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+}

@@ -1,0 +1,150 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the common layout of the site
+// -----------------------------------------------------------------------------
+
+body {
+	background-color: $body-bg;
+}
+
+.wrapper {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.top-baner {
+	display: none;
+	font-size: map-get($font-sizes, 'lg');
+	line-height: 1;
+	color: $white;
+	background: #0F0E0E;
+	padding: 28px;
+
+	@include media('>=desktop') {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__img {
+		margin: 0 8px 0 0;
+
+		&--top {
+			transform: translate(-13px, -10px);
+		}
+
+		&--bottom {
+			transform: translate(0, 10px);
+		}
+	}
+
+	&__txt {
+		p {
+			margin: 0;
+		}
+	}
+}
+
+.main {
+	margin-bottom: 300px;
+
+	@include media('>=laptop') {
+		margin-bottom: 400px;
+	}
+}
+
+.container {
+	max-width: $container-max-width;
+	padding: 0 $gutter;
+	margin: 0 auto;
+}
+
+.btn-holder {
+	max-width: 250px;
+	margin: 0 auto;
+	padding: 21px 0 0;
+
+	@include media('>=desktop') {
+		padding: 5px 0 0;
+	}
+}
+
+// skip links
+.accessibility {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+
+	&:focus {
+		position: static;
+		width: auto;
+		height: auto;
+	}
+}
+
+.yellow-block {
+	display: inline-block;
+	position: relative;
+	z-index: -1;
+	
+	&:before {
+		position: absolute;
+		content: '';
+		top: -4px;
+    	left: -20px;
+		width: 178px;
+		height: 54px;
+		background-image: url('./../images/yellow-long.svg');
+		background-size: cover;
+		z-index: -1;
+
+		@include media('>=tablet') {
+			width: 230px;
+    		height: 70px;
+			top: 0;
+			left: -10px;
+		}
+
+		@include media('>=desktop') {
+			width: 322px;
+			height: 98px;
+			left: -20px;
+		}
+
+		@include media('>=custom-desktop') {
+			top: 0;
+			left: -25px;
+		}
+	}
+
+	&--small {
+		&:before {
+			left: -14px;
+    		top: -7px;
+			width: 78px;
+			height: 57px;
+			background-image: url('./../images/yellow-short.svg');
+			
+			@include media('>=tablet') {
+				left: -20px;
+				top: -15px;
+				width: 125px;
+				height: 91px;
+			}
+
+			@include media('>=desktop') {
+				width: 125px;
+				height: 91px;
+				top: -7px;
+			}
+
+			@include media('>=custom-desktop') {
+				top: -7px;
+				left: -20px;
+			}
+		}
+	}
+}

@@ -1,0 +1,127 @@
+
+// -----------------------------------------------------------------------------
+// This file contains typography styles.
+// -----------------------------------------------------------------------------
+
+/*
+  Set up a decent box model on the root element
+*/
+
+html {
+  font-size: $rem-base;
+}
+
+/*
+  Basic typography style for copy text
+*/
+body {
+  color: $body-color;
+  font-family: $font-family-base;
+  font-size: map-get($font-sizes, 'base');
+  line-height: $line-height-base;
+  font-weight: $font-weight-normal;
+
+  @include media('>=custom-desktop') {
+    font-size: map-get($font-sizes, 'lg');
+    line-height: $line-height-lg;
+  }
+}
+
+/*
+  Basic styles for links
+*/
+a {
+  @include transition(color);
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+ul,
+ol,
+dl,
+p {
+  margin: 0 0 $paragraph-margin-bottom;
+}
+
+ul {
+  padding: 10px 0 10px 37px;
+}
+
+/*
+  Basic styles for typography, generate classes for sizes provided into sass-map $font-sizes
+  Using fluid type behavior
+*/
+
+// @each $name, $value in $font-sizes {
+//   .text-size-#{$name} {
+//     $max-value: map-get($font-sizes-max, $name);
+
+//     @include fluid-type($value, $max-value);
+//   }
+// }
+
+/*
+  Basic styles for headings, generate classes for sizes provided into sass-map $font-sizes
+  Using fluid type behavior
+*/
+
+@each $name, $value in $headings-sizes {
+  #{$name},
+  .#{$name} {
+    font-size: $value;
+    font-weight: 700;
+    line-height: $headings-line-height;
+    margin: $headings-margin-bottom-medium;
+    letter-spacing: $headings-letter-spacing;
+  }
+}
+
+
+h1, .h1 {
+  @include media('>=phone') {
+    font-size: 48px;
+  }
+
+  @include media('>=tablet') {
+    font-size: 68px;
+    margin: $headings-margin-bottom-large;
+  }
+  
+  @include media('>=custom-desktop') {
+    font-size: 88px;
+    margin: $headings-margin-bottom-extra-large;
+  }
+}
+
+h2, .h2 {
+  position: relative;
+  margin: $headings-margin-bottom-large;
+  z-index: 1;
+  
+  @include media('>=tablet') {
+    font-size: 46px;
+  }
+  
+  @include media('>=desktop') {
+    font-size: 60px;
+    margin: 0 0 42px;
+  }
+}
+
+h3, .h3 {
+  letter-spacing: -.5px;
+  
+  @include media('>=tablet') {
+    font-size: 32px;
+  }
+  @include media('>=desktop') {
+    font-size: 40px;
+    letter-spacing: 0;
+    margin: $headings-margin-bottom-large;
+  }
+}
