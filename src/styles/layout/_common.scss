@@ -122,6 +122,8 @@ body {
 
 	&--small {
 		&:before {
+			position: absolute;
+			content: '';
 			left: -14px;
     		top: -7px;
 			width: 78px;
@@ -147,4 +149,30 @@ body {
 			}
 		}
 	}
+}
+.yellow-decoration {
+	display: inline-flex;
+	position: relative;
+	justify-content: center;
+	svg {
+		position: absolute;
+		z-index: -1;
+		width: 130%;
+		top: -60%;
+		@include media('>=tablet') {
+			top: -20%;
+		}
+		@include media('>=desktop') {
+			top: 0;
+		}
+	}
+}
+.page-article {
+    padding-top: 70px;
+}
+.page-article h1 {
+    margin: 0 0 20px;
+}
+.title {
+	width: 100%;
 }

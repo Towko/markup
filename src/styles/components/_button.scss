@@ -19,3 +19,8 @@
         background: $light-blue;
     }
 }
+button.btn-default {
+    &:hover {
+        color: $white;
+    }
+}

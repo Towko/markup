@@ -47,7 +47,7 @@
         @include media('>=custom-desktop') {
             font-size: map-get($font-sizes, 'lg');
             line-height: $line-height-lg;
-            padding: 49px 40px 49px 55px;
+            padding: 30px 40px 30px 55px;
             align-items: center;
         }
 
@@ -61,7 +61,8 @@
 
     .slide {
         padding: 0 80px 0 20px;
-
+        font-size: 18px;
+        line-height: 22px;
         @include media('>=laptop') {
             padding: 0 80px 0 55px;
         }

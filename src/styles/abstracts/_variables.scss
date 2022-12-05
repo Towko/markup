@@ -9,8 +9,9 @@
 $breakpoints: (
   'xs-phone': 320px,
   'phone': 520px,
-  'tablet': 768px,
+  'tablet': 720px,
   'desktop': 1024px,
+  'mini-desktop': 1250px,
   'custom-desktop': 1366px,
   'laptop': 1480px,
   'widescreen': 1920px
@@ -28,13 +29,9 @@ $media-expressions: (
 );
 
 // Color system
-
 $white: #fff;
 $black: #000;
 $blue: #1DB6DA;
-// $blue-medium: #1EC5ED;
-// $blue-light: #22CDF6;
-// $blue-dark: #2A99B2;
 $blue-gray: #EBF3F5;
 $gray: #F2F2F2;
 $gray-next: #E4E4E4;
@@ -45,6 +42,8 @@ $main-blue: #32A6C1;
 $light-blue: #02B9D2;
 $dark-grey: #939CA1;
 $medium-cold-grey: #CDD5D7;
+$yellow: #F6CA56;
+$optional-grey: #8B9397;
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 150;
 
@@ -97,11 +96,20 @@ $font-weight-heavy: 800;
 $font-weight-black: 900;
 
 $font-sizes: (
-  'xl': 18px,
   'lg': 24px,
   'base': 20px,
+  'mdplus': 18px,
   'md': 16px,
   'sm': 14px,
+  'xs': 12px,
+);
+
+$line-heights: (
+  'xl': 36px,
+  'lg': 24px,
+  'mdplus': 22px,
+  'md': 20px,
+  'xs': 18px,
 );
 
 $headings-sizes: (
@@ -121,7 +129,7 @@ $headings-line-height: 1.1;
 $headings-letter-spacing: -1.2px;
 
 // Paragraphs
-$paragraph-margin-bottom: 1.5em;
+$paragraph-margin-bottom: 1em;
 
 // Base transition function
 $transition-duration-base: 0.35s;

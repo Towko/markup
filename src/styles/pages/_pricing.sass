@@ -1,0 +1,517 @@
+.wrapper
+	overflow: unset
+.pricing 
+	display: flex
+	position: relative
+	flex-wrap: wrap
+	margin-top: 0px
+	margin-bottom: 50px
+.price-toggler 
+	display: flex
+	position: relative
+	background: $gray
+	justify-content: space-between
+	margin: 40px auto
+	transition: $transition-duration-base $transition-easing-base
+	width: 310px
+	border-radius: 16px
+	padding: 6px
+.toggler-btn 
+	display: flex
+	position: relative
+	font-size: map-get($font-sizes, 'md')
+	line-height: map-get($line-heights, 'md')
+	font-weight: $font-weight-bold
+	color: $black
+	justify-content: center
+	align-items: flex-end
+	transition: $transition-duration-base $transition-easing-base
+	padding: 12px 16px
+	border-radius: 14px
+	span
+		font-size: map-get($font-sizes, 'xs')
+		line-height: map-get($line-heights, 'xs')
+		margin-left: 12px
+		text-transform: uppercase
+	&.active 
+		background: $black
+		color: $white
+		transition: $transition-duration-base $transition-easing-base
+.price
+	&-cards 
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		position: relative
+		// width: 100%
+		flex-wrap: wrap
+		
+	&-card 
+		display: flex
+		flex-direction: column
+		min-width: 325px
+		max-width: 100%
+		background: $blue-gray
+		border-radius: 14px
+		margin: 4px
+		&:last-child:nth-child(2n+1)
+			min-width: 100%
+		@include media('>=tablet')
+			max-width: 48%
+		@include media('>=desktop')
+			min-width: 400px
+		@include media('>=mini-desktop')
+			max-width: 32%
+			background: none
+			margin: 0
+			&:last-child:nth-child(2n+1)
+				min-width: 400px
+				max-width: 32%
+		&--popular
+			background: $yellow
+			.tariff-card
+				&__wrap
+					background: $yellow
+				&__inner
+					border-color: $yellow
+		// &:last-child:nth-child(2n+1)
+		// 	@include media('>=mini-desktop')
+		// 		min-width: 100%
+			
+.tariff-card 
+	display: flex
+	position: relative
+	// border: 4px solid $blue-gray
+	border-radius: 14px 
+	flex-direction: column
+	border: 4px solid transparent
+	// margin: 4px
+	// &--popular
+	// 	border-color: $yellow
+	&__wrap
+		display: flex
+		position: relative
+		flex-direction: column
+		border-radius: 14px
+		background: $white
+		border: none
+		overflow: hidden
+		@include media('>=mini-desktop')
+			background: $gray
+	&__extra
+		display: flex
+		position: relative
+		width: 100%
+		font-size: map-get($font-sizes, 'xs')
+		line-height: map-get($line-heights, 'xs')
+		font-weight: $font-weight-bold
+		text-transform: uppercase
+		padding: 12px 26px
+		background: $yellow
+		@include media('>=mini-desktop')
+			padding: 16px 26px 8px
+	&__inner
+		display: flex
+		position: relative
+		flex-direction: column
+		padding: 16px 26px 36px
+		border-radius: 14px
+		background: $white
+		@include media('>=mini-desktop')
+			border: 4px solid $gray
+
+	&__title 
+		display: flex
+		position: relative
+		font-size: 24px
+		line-height: 28px
+		font-weight: $font-weight-bold
+		align-items: center
+		margin-bottom: 10px
+	&__users 
+		display: flex
+		position: absolute
+		font-size: map-get($font-sizes, 'sm')
+		line-height: map-get($line-heights, 'md')
+		font-weight: $font-weight-normal
+		right: 0
+		align-items: center
+		&::before
+			content: ""
+			display: block
+			width: 16px
+			height: 16px
+			background: url("/src/images/user.svg") no-repeat
+			margin-right: 8px
+	&__desc 
+		height: 126px
+		font-size: 16px
+		line-height: 20px
+		font-weight: $font-weight-normal
+		overflow: hidden
+	&__cost 
+		display: flex
+		position: relative
+		justify-content: space-between
+		align-items: flex-end
+		margin-bottom: 40px
+		&--price 
+			font-size: 84px
+			line-height: 92px
+			font-weight: $font-weight-bold
+			color: $black
+			margin-bottom: -10px
+		&--count 
+			font-size: 16px
+			line-height: 18px
+			font-weight: $font-weight-normal
+	&__button
+		position: relative
+		margin-bottom: 46px
+		button
+			width: 100%
+	&__additional 
+		position: absolute
+		bottom: -35px
+		font-size: map-get($font-sizes, 'sm')
+		line-height: map-get($line-heights, 'md')
+		font-weight: $font-weight-normal
+	&__showmore
+		background: $white
+		font-size: 24px
+		line-height: 28px
+		font-weight: $font-weight-bold
+		color: $black
+		margin: 8px auto
+		&:hover
+			color: $black !important
+		@include media('>=mini-desktop')
+			// display: none
+			font-size: 24px
+			line-height: 28px
+			font-weight: $font-weight-bold
+			text-align: left
+			margin: 80px 8px 4px
+			padding: 0 20px
+			&:hover
+				background: none
+				cursor: default
+		// &.active
+		// 	+ .tariff-full
+		// 		display: flex
+.tariff
+	&-full 
+		display: none
+		position: relative
+		flex-direction: column
+		padding: 20px 26px 36px
+		border-radius: 14px
+		background: $white
+		overflow: hidden
+		@include media('>=mini-desktop')
+			display: flex
+			background: none
+		&.active
+			display: flex
+		&__table 
+		// &__title 
+		// 	font-size: map-get($font-sizes, 'lg')
+		// 	line-height: map-get($line-heights, 'xl')
+		// 	font-weight: $font-weight-bold
+		// 	padding-top: 24px
+		// 	padding-bottom: 4px
+		&__feature 
+			font-size: 18px
+			line-height: 22px
+			font-weight: $font-weight-normal
+			min-height: 48px
+			padding-top: 20px
+			padding-bottom: 4px
+			border-top: 1px solid rgba(0,0,0,0.12)
+			&:nth-child(1)
+				// padding-top: 0
+				border: none
+		&__includes 
+			font-weight: $font-weight-bold
+			padding-top: 20px
+			margin-bottom: 46px
+		&__subheader 
+			margin-bottom: 4px
+		&__subproducts 
+			margin-top: 12px
+			font-weight: $font-weight-normal
+			&--image 
+				margin-right: 8px
+			&__additional 
+				position: absolute
+				bottom: -35px
+				font-size: map-get($font-sizes, 'sm')
+				line-height: map-get($line-heights, 'md')
+				font-weight: $font-weight-normal
+
+.button-compare 
+	display: flex
+	position: relative
+	justify-content: center
+	align-items: center
+	font-size: map-get($font-sizes, 'sm')
+	line-height: map-get($line-heights, 'mdplus')
+	font-weight: $font-weight-bold
+	border: 1px solid #CFD8DC
+	margin: 50px auto
+	padding: 10px 12px
+	border-radius: 4px
+	transition: $transition-duration-base $transition-easing-base
+	svg
+		margin-right: 6px
+	&:hover
+		border-color: $gray-hover
+		transition: $transition-duration-base $transition-easing-base
+
+.awards-article
+	margin-bottom: 100px
+.brand-slider
+	display: flex
+	position: relative
+	justify-content: space-between
+	align-items: center
+	padding: 20px 0 !important
+	.slick
+		&-slide
+			justify-content: center
+		&-track
+			display: flex
+			align-items: center
+		&-arrow
+			position: absolute
+			top: calc(100% / 2 - 30px)
+			background: none
+			opacity: .5
+			transition: $transition-duration-base $transition-easing-base
+			&:hover
+				transition: $transition-duration-base $transition-easing-base
+				opacity: 1
+			&--prev
+				left: 0
+			&--next
+				left: 100%
+
+.compare
+	&-tariffs
+		display: flex
+		position: sticky
+		justify-content: flex-end
+		align-items: center
+		top: 0
+		z-index: 10
+		.price-card
+			justify-content: space-between
+			min-width: 25%
+			max-width: 25%
+			flex: 0 0 25%
+			.tariff-card
+				&__inner
+					padding: 16px 12px 0 11px
+			&:last-child:nth-child(2n+1)
+				min-width: 25%
+		&-article
+			display: none
+			@include media('>=mini-desktop')
+				display: block
+	&-table
+		display: flex
+		position: relative
+		flex-wrap: wrap
+		margin-top: 60px
+		margin-bottom: 60px
+		&__block
+			display: flex
+			width: 100%
+			flex-direction: column
+		&__row
+			display: flex
+			width: 100%
+			justify-content: space-between
+			align-items: flex-end
+			&:last-child
+				margin-bottom: 60px
+		&__rowtitle
+			width: 100%
+			font-size: map-get($font-sizes, 'lg')
+			line-height: map-get($line-heights, 'xl')
+			font-weight: $font-weight-bold
+		&__score
+			display: flex
+			flex: 0 0 24%
+			margin: 0 0.33%
+			font-size: 18px
+			line-height: 22px
+			font-weight: $font-weight-normal
+			border-bottom: 1px solid rgba(0,0,0,0.12)
+			padding-top: 20px
+			padding-bottom: 4px
+			&:first-child
+				margin-left: 0
+			&:last-child
+				margin-right: 0
+
+.form
+	&-article
+		background: $blue-gray
+		padding: 150px 60px 45px
+		margin: 120px 0
+		@include media('>=desktop')
+			padding: 150px 110px 45px
+		.break-txt
+			margin-bottom: 30px
+	&-tariff-choose
+		display: flex
+		position: relative
+		width: 100%
+		margin: 0 auto
+		justify-content: flex-start
+		flex-direction: column
+		@include media('>=desktop')
+			width: 560px
+		input, textarea
+			background: $white
+			border-radius: 10px
+			border: none
+			width: 100%
+			min-height: 60px
+			padding: 10px 20px
+			margin-top: 4px
+		label
+			text-align: left
+			span
+				color: $optional-grey
+		.itext, .itextarea
+			font-size: 20px
+			line-height: 24px
+			font-weight: $font-weight-bold
+		.input-field
+			text-align: left
+			margin-bottom: 30px
+		button
+			width: 215px
+			margin: 40px auto
+	&-radio
+		display: flex
+		margin: 30px 0 40px
+		flex-wrap: wrap
+		&__label
+			width: 100%
+			font-size: 20px
+			line-height: 24px
+			font-weight: $font-weight-bold
+		.icheck
+			display: flex
+			width: 100%
+			background: $white
+			border-radius: 10px
+			justify-content: space-between
+			margin-bottom: 10px
+			padding: 12px 20px
+			cursor: pointer
+			font-size: 20px
+		&__options
+			display: flex
+			width: 100%
+			padding-left: 0
+			justify-content: flex-start
+			align-items: flex-start
+			flex-wrap: wrap
+			margin: 0
+		&__option
+			display: flex
+			list-style: none
+			margin-right: 10px
+			.itext
+				position: absolute
+				visibility: hidden
+			&.active
+				.icheck
+					background: $light-blue
+					color: $white
+
+.testimonials-article
+	margin: 120px 0
+.testimonials
+	display: grid
+	position: relative
+	width: 100%
+	// grid-template-columns: repeat(auto-fill, minmax(100%, 1fr))
+	grid-template-columns: repeat(auto-fill, minmax(32%, 1fr))
+	grid-gap: 9px
+	grid-gap: 20px
+	margin: 60px 0
+	flex-direction: row
+	justify-content: flex-start
+	align-items: flex-start
+	flex-wrap: wrap
+	// @include media('>=desktop')
+	// 	grid-template-columns: repeat(auto-fill, minmax(32%, 1fr))
+	// 	flex-direction: column
+	// 	grid-gap: 20px
+	.testimonial
+		justify-content: space-between
+		align-items: flex-start
+		border: solid $gray 2px
+		border-radius: 10px
+		padding: 20px
+		width: 100%
+		height: auto
+		// margin: 0 5px 5px
+		margin: 0 0 23px
+		// @include media('>=desktop')
+		// 	margin: 0 0 23px
+		&:last-child:nth-child(2n+1)
+			display: none
+			@include media('>=desktop')
+				display: flex
+				flex-direction: column
+		&__col
+			display: flex
+			width: 100%
+			flex-direction: column
+			// @include media('>=desktop')
+    		// 	flex-direction: column
+			&:last-child:nth-child(2n+1)
+				display: none
+				@include media('>=desktop')
+					display: flex
+					flex-direction: column
+		&__user
+			display: flex
+			width: 100%
+			justify-content: flex-start
+			align-items: center
+			margin-bottom: 10px
+		&__name
+			font-size: map-get($font-sizes, 'sm')
+			line-height: map-get($line-heights, 'md')
+			font-weight: $font-weight-bold
+			margin-bottom: 4px
+		&__rate
+			display: flex
+			width: 100%
+			align-items: flex-start
+			flex-direction: column
+			margin-left: 10px
+		&__stars
+			display: flex
+			justify-content: flex-start
+			.star
+				width: 13px
+				height: 13px
+		&__text
+			font-size: map-get($font-sizes, 'md')
+			line-height: map-get($line-heights, 'lg')
+			font-weight: $font-weight-normal
+			text-align: left
+		&--big
+			.testimonial__text
+				font-size: map-get($font-sizes, 'lg')
+				line-height: map-get($line-heights, 'xl')
+				font-weight: $font-weight-bold
+

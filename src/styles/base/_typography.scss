@@ -84,16 +84,19 @@ ul {
 
 h1, .h1 {
   @include media('>=phone') {
-    font-size: 48px;
+    font-size: 40px;
+    line-height: 44px;
   }
 
   @include media('>=tablet') {
-    font-size: 68px;
+    // font-size: 52px;
+    // line-height: 77px;
     margin: $headings-margin-bottom-large;
   }
   
   @include media('>=custom-desktop') {
-    font-size: 88px;
+    font-size: 60px;
+    line-height: 77px;
     margin: $headings-margin-bottom-extra-large;
   }
 }
@@ -102,20 +105,23 @@ h2, .h2 {
   position: relative;
   margin: $headings-margin-bottom-large;
   z-index: 1;
-  
+  font-size: 32px;
+  line-height: 44px;
+
   @include media('>=tablet') {
-    font-size: 46px;
+    // font-size: 46px;
   }
   
   @include media('>=desktop') {
-    font-size: 60px;
+    font-size: 40px;
+    line-height: 58px;
     margin: 0 0 42px;
   }
 }
 
 h3, .h3 {
   letter-spacing: -.5px;
-  
+  font-size: 40px;
   @include media('>=tablet') {
     font-size: 32px;
   }
